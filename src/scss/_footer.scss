@@ -1,0 +1,105 @@
+@use 'variables';
+@use 'mixins';
+
+.footer {
+    border-top: .5px solid rgb(66, 66, 66); ;
+    padding: 2.5rem;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    // height: max-content;
+    @include mixins.breakpoint-down(small) {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include mixins.breakpoint-up(medium) {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        height: 11em;
+        // gap: 1.5rem;
+        grid-template-columns: [column-1-start] 1fr [column-1-end column-2-start] 1fr [column-2-end column-3-start] 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "logo links cta"
+                             "social links cta"
+        
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        height: 2em;
+        &:hover{
+            color: variables.$gold;
+        }
+    }
+    &__logo{
+        margin-bottom: .875rem;
+        display: inline-block;
+        img{
+            height: 3em;
+        }
+        @include mixins.breakpoint-up(large){
+            grid-column-start: column-1-start;
+            grid-column-end: span 1;
+            grid-area: logo;
+        }
+    }
+    &__social{
+        align-items: center;
+        justify-content: center;
+        // margin-bottom: 1.875rem;
+        a{
+            display: inline-block;
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+        }
+        @include mixins.breakpoint-up(large){
+            grid-column-start: column-1-start;
+            grid-column-end: span 1;
+            grid-area: social;
+        }
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        
+        @include mixins.breakpoint-up(medium){
+            grid-column-start: 2;
+            grid-column-end: span 1;
+            grid-area: links;
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    &__cta{
+        @include mixins.breakpoint-up(medium){
+            grid-column-start: column-3-start;
+            grid-column-end: span 1;
+            grid-area: cta;
+        }
+        a{
+            // display: block;
+            background: linear-gradient(-45deg,rgb(197, 173, 34) 70%, rgba(82, 78, 78, 0.137) );
+            padding: 8px;
+            border-radius: 15px;
+            // font-family: variables.$buttonFont;
+            text-decoration: none;
+            font-weight: bold;
+            color: rgb(231, 229, 229);
+            text-shadow: 0 0 3px black;
+            box-shadow: none;
+            &:hover{
+                box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.527);
+            }
+        }
+    }
+}
+
+.fa-brands{
+    font-size: 1rem;
+}

@@ -1,0 +1,145 @@
+@use 'variables';
+@use 'mixins';
+
+.hero{
+    position: relative;
+    &__image{
+        background-image: url("/src/assets/images/1-lawyer-image.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 120%;
+        height: 120vh;
+        top: 40%;
+        bottom: 500px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        &::before{
+            animation: logo-load 1000ms ease-in-out forwards;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center 85%;
+            background-image: url("/src/assets/images/belmondemoraes-removebg-preview.png");
+            // box-shadow: 2pc 2px black;
+            border-radius: 3px;
+            // top: 20%;
+            // bottom: 500px;
+            left: 5vw;
+            // transform: translate(-500px);
+            width: 500px;
+            height: 185px;
+        }
+        &__desc{
+            position: absolute;
+            top: 65%;
+            color: rgb(126, 126, 126);
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 0 0 8px black;
+            animation: hero-text-load 700ms forwards;
+        }
+    }
+    &__text{
+        // border-bottom: .5px solid rgb(66, 66, 66);
+        color: white;
+        background: linear-gradient(to bottom,rgba(0, 0, 0, 0) , rgb(0, 0, 0) 80px);
+        text-shadow: 0 0 3px black;
+        padding: 2rem 3rem;
+        padding-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -99px;
+        h1{
+            font-weight: 300;
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+        &__item{
+            opacity: 0;
+        }
+
+        .button.hero__cta{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(-45deg,rgb(182, 152, 0) 80%, rgba(82, 78, 78, 0.137) );
+            padding: 4px 8px;
+            border-radius: 15px;
+            // font-family: variables.$buttonFont;
+            text-decoration: none;
+            font-weight: bold;
+            color: rgb(231, 229, 229);
+            text-shadow: 0 0 3px black;
+            box-shadow: none;
+            .fa-whatsapp{
+                font-size: 30px;
+                margin-left: .1em;
+            }
+            &:hover{
+                box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.527);
+                .fa-whatsapp{
+                    color: rgb(132, 202, 132);
+                }
+            }
+        }
+    }
+}
+
+.text-fade-in{
+    animation: text-fade-in 1000ms ease-in forwards;
+}
+@keyframes text-fade-in {
+    10%{
+        opacity: 0.15;
+    }
+    30%{
+        opacity: 0.4;
+    }
+    70%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+    
+
+@media(max-width: 554px) {
+    .hero{
+        &__image{
+            height: 280px;
+            background-position: center 95%;
+            &::before{
+                left: 50%;
+                width: 271px;
+                height: 100px;
+                // left: 50%;
+                top: 7em;
+                transform: translateX(-50%);
+                animation: none;
+            }
+        }
+        &__text{
+            padding: 1rem;
+            
+        }
+    }
+}
+
+@keyframes logo-load {
+    0%{
+        top: -20%;
+        transform: translateY(-100%), 
+        translateX(-50%);
+    }
+    100%{
+        top: 20%;
+    }
+}
+

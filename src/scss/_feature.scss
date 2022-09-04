@@ -1,0 +1,177 @@
+    @use 'mixins';
+    @use 'variables';
+
+    .feature {
+        background-color: rgb(0, 0, 0);
+        // padding: 50px 0;
+        & > h2{
+            opacity: 0;
+            color: white;
+            // padding-top: 3rem;
+            padding-bottom: 6rem;
+            font-size: 3rem;
+            font-family: variables.$SansSerif;
+        }
+
+        &__description {
+            text-shadow: 1px 1px 5px black;
+        }
+
+        &__grid {
+            // height: 1600px;
+                // position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 5em;
+                // margin: 50px 0;
+                .feature__item:nth-child(1) {
+                    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.direitoreal.com.br%2Fuploads%2Fckeditor%2Fpictures%2F68%2Fdemissao-acordo-reforma-trabalhista.jpg&f=1&nofb=1);
+                    background-position: center 20%;
+                    // animation: card-load-left 400ms ease-in-out forwards;
+                }
+                .feature__item:nth-child(2) {
+                    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.clladv.com.br%2Fwp-content%2Fuploads%2F2020%2F10%2Fdireito-civel.jpg&f=1&nofb=1);
+                    background-position: center 20%;
+                    
+                    // animation: card-load-right 400ms ease-in-out forwards;
+                }
+                .feature__item:nth-child(3) {
+                    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.baymaefernandes.adv.br%2Fwp-content%2Fuploads%2F2020%2F03%2FDIREITO-PREVIDENCI%25C3%2581RIO.jpg&f=1&nofb=1); 
+                    background-position: center 60%;
+                    
+                    // animation: card-load-left 400ms ease-in-out forwards;
+                }
+                .feature__item:nth-child(4) {
+                    background-image: url(https://vidamental.com.br/wp-content/uploads/2017/05/Direito-Civil-Vida-Mental.jpg);
+                    background-position: center 20%;
+                    
+                    // animation: card-load-right 400ms ease-in-out forwards;
+                }
+                
+                @include mixins.breakpoint-down(small) {
+                    align-items: center;
+                    left: 0;
+                    .feature__item{
+                        left: -60vw;
+                        h2{
+                            text-align: center;
+                            top: -1em;
+                            left: 90%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+
+                @include mixins.breakpoint-up(medium) {
+                    .feature__item{
+                        left: -74.3%;
+                        h2{
+                            top: -1em;
+                            left: 1em;
+                        }
+                    }
+                }
+            }
+        
+        &__item {
+            position: relative;
+            flex: 1;
+            box-shadow: 0px 0px 5px 3px rgba(255, 255, 255, 0.247);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 70vw;
+            height: max-content;
+            border-radius: 5px;
+            color: white;
+            h2{
+                text-align: left;
+                position: relative;
+                // top: -40px;
+                // left: 1.5em;
+                color: white;
+                padding-top: 0em;
+                font-size:2em;
+            }
+        }
+
+        &__title{
+            font-family: none;
+        }
+    }
+
+    .fade-in-left{
+        animation: card-load-left 1000ms ease-in-out forwards;
+        @include mixins.breakpoint-down(small) {
+            animation: card-load-left-sm 800ms ease-in-out forwards;
+        }
+    }
+
+    .fade-in-right {
+        animation: card-load-right 1000ms ease-in-out forwards;
+        @include mixins.breakpoint-down(small) {
+            animation: card-load-right-sm 800ms ease-in-out forwards;
+        }
+    }
+
+    .title-fade-in{
+        animation: title-fade-in 1500ms ease-in forwards;
+    }
+
+    @keyframes card-load-right {
+        0%{
+            left: 100vw;
+            transform: translateX(100%);
+        }
+        100%{
+            // right: 150vw;
+            left: 7vw;
+            // transform: none;
+        }
+    }
+
+    @keyframes card-load-left {
+        0%{
+            left: -80vw;
+            transform: translateX(-100%);
+        }
+        100%{
+            left: 21vw;
+            // transform: translateX(-50%);
+            // transform: none;
+        }
+    }
+
+    @keyframes card-load-right-sm {
+        0%{
+            left: 100vw;
+            transform: translateX(100%);
+        }
+        100%{
+            left: 0%;
+        }
+    }
+
+    @keyframes card-load-left-sm {
+        0%{
+            left: 0;
+            transform: translateX(-100%);
+        }
+        100%{
+            left: 0%;
+        }
+    }
+
+    @keyframes title-fade-in {
+        10%{
+            opacity: 0.15;
+        }
+        30%{
+            opacity: 0.4;
+        }
+        70%{
+            opacity: 0.75;
+        }
+        100%{
+            opacity: 1;
+        }
+    }

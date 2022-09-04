@@ -1,0 +1,20 @@
+{
+  "name": "moraes---belmond-advogados",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "yarn run vite"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
