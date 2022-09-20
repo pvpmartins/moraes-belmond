@@ -1139,6 +1139,7 @@ section {
 @media (max-width: 39.9375em) {
   .institucional .socios-card__member-image {
     width: 250px;
+    outline: red 1px solid;
     height: 220px;
   }
 }

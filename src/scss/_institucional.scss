@@ -318,6 +318,7 @@
                 background-repeat: no-repeat;
                 @include mixins.breakpoint-down(small) {
                     width: 250px;
+                    outline: red 1px solid;
                     height: 220px;
                 }
             }
