@@ -370,6 +370,12 @@
             &[title~="Philipi"] .socios-card__member-image{
                 background-image: url(/src/assets/images/socios/phillipe.jpeg);
                 background-position: 100% 85%;
+                .socios-card__member-image{
+                    @include mixins.breakpoint-down(small) {
+                        width: 250px;
+                        height: 220px;
+                    }
+                }
             }
             &[title~="Gabriel"] .socios-card__member-image{
                 background-image: url(/src/assets/images/socios/gabriel.jpeg);
@@ -384,12 +390,6 @@
             &[title~="Willians"] .socios-card__member-image{
                 background-image: url(/src/assets/images/socios/Willians.jpeg);
                 background-position: 100% 70%;
-            }
-            .socios-card__member-image{
-                @include mixins.breakpoint-down(small) {
-                    width: 250px;
-                    height: 220px;
-                }
             }
             .avatar{
                 display: flex;
