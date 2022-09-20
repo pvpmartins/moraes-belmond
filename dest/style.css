@@ -1209,6 +1209,7 @@ section {
   .institucional .socios-card__member-spec .avatar {
     width: 15em;
     flex-direction: column;
+    height: 20em;
     border-radius: 10px;
   }
 }
