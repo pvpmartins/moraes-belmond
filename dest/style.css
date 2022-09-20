@@ -1307,6 +1307,13 @@ section {
   display: none;
 }
 
+@media (max-width: 39.9375em) {
+  .avatar > .socios-card__member-image {
+    width: 15em;
+    height: 15em;
+  }
+}
+
 .modal-load {
   -webkit-animation: modal-member 300ms ease-in forwards;
           animation: modal-member 300ms ease-in forwards;

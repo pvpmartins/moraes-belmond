@@ -503,8 +503,8 @@
 }
 .avatar > .socios-card__member-image {
     @include mixins.breakpoint-down(small) {
-        // width: 250px;
-        // height: 220px;
+        width: 15em;
+        height: 15em;
         // display: none;
     }
 }
