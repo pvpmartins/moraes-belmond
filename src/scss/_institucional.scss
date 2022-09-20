@@ -403,12 +403,7 @@
                     border-radius: 10px;
                 }
 
-                & > .socios-card__member-image {
-                    @include mixins.breakpoint-down(small) {
-                        width: 250px;
-                        height: 220px;
-                    }
-                }
+                
             }
 
             @include mixins.breakpoint-down(small) {
@@ -508,9 +503,9 @@
 }
 .avatar > .socios-card__member-image {
     @include mixins.breakpoint-down(small) {
-        width: 250px;
-        height: 220px;
-        display: none;
+        // width: 250px;
+        // height: 220px;
+        // display: none;
     }
 }
 

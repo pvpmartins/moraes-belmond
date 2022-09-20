@@ -1210,12 +1210,6 @@ section {
   }
 }
 @media (max-width: 39.9375em) {
-  .institucional .socios-card__member-spec .avatar > .socios-card__member-image {
-    width: 250px;
-    height: 220px;
-  }
-}
-@media (max-width: 39.9375em) {
   .institucional .socios-card__member-spec {
     flex-direction: column;
     width: -webkit-fit-content;
@@ -1311,14 +1305,6 @@ section {
   position: fixed;
   z-index: 3;
   display: none;
-}
-
-@media (max-width: 39.9375em) {
-  .avatar > .socios-card__member-image {
-    width: 250px;
-    height: 220px;
-    display: none;
-  }
 }
 
 .modal-load {
