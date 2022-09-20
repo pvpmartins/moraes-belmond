@@ -363,7 +363,7 @@
             z-index: 3;
 
             @include mixins.breakpoint-down("small"){
-                height: 70vh;
+                height: fit-content;
                 border-radius: 10px;
                 gap: 1rem;
                 flex-direction: column;
