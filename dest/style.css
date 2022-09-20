@@ -1166,7 +1166,9 @@ section {
   padding: 2em;
   background-color: rgb(100, 100, 100);
   color: rgb(255, 255, 255);
-  width: 70vw;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   top: -30vh;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1207,18 +1209,8 @@ section {
 @media (max-width: 39.9375em) {
   .institucional .socios-card__member-spec .avatar {
     width: 15em;
-    border-radius: 10px;
-  }
-}
-@media (max-width: 39.9375em) {
-  .institucional .socios-card__member-spec {
     flex-direction: column;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    border-radius: 10px;
   }
 }
 .institucional .socios-card__member-spec .btn-exit {

@@ -355,7 +355,7 @@
             background-color: rgb(100, 100, 100);
             color: rgb(255, 255, 255);
             // text-shadow: 0 0 1px black;
-            width: 70vw;
+            width: fit-content;
             // height: 80%;
             top: -30vh;
             left: 50%;
@@ -400,6 +400,9 @@
             
                 @include mixins.breakpoint-down(small) {
                     width: 15em;
+                    flex-direction: column;
+                    
+
                     // height: max-content;
                     border-radius: 10px;
                 }
@@ -407,11 +410,7 @@
                 
             }
 
-            @include mixins.breakpoint-down(small) {
-                flex-direction: column;
-                width: fit-content;
-                height: fit-content;
-            }
+            
 
             .btn-exit{
                 position: absolute;
