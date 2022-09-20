@@ -102,6 +102,9 @@
 
 .upright-load{
     animation: upright-load 1000ms ease-in forwards;
+    @include mixins.breakpoint-down(small) {
+        animation: upright-load-sm 1000ms ease-in-out forwards;
+    }
 }
 
 @keyframes text-fade-in {
@@ -124,10 +127,15 @@
         padding-top: 15rem;
     }
     100%{
-        @include mixins.breakpoint-down("small") {
-            padding-top: -550rem;
-        }
         padding-top: 2rem;
+    }
+}
+@keyframes upright-load-sm {
+    0%{
+        padding-top: 15rem;
+    }
+    100%{
+        padding-top: 5rem;
     }
 }
     
