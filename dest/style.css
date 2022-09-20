@@ -1163,7 +1163,6 @@ section {
   display: none;
   gap: 3rem;
   justify-content: flex-start;
-  padding: 2em;
   background-color: rgb(100, 100, 100);
   color: rgb(255, 255, 255);
   width: -webkit-fit-content;
@@ -1174,10 +1173,16 @@ section {
   transform: translate(-50%, -50%);
   z-index: 3;
 }
+@media (min-width: 40em) {
+  .institucional .socios-card__member-spec {
+    padding: 2em 3em;
+  }
+}
 @media (max-width: 39.9375em) {
   .institucional .socios-card__member-spec {
     border-radius: 10px;
     gap: 1rem;
+    padding: 2em;
     flex-direction: column;
   }
 }

@@ -351,7 +351,7 @@
             display: none;
             gap: 3rem;
             justify-content: flex-start;
-            padding: 2em;
+            
             background-color: rgb(100, 100, 100);
             color: rgb(255, 255, 255);
             // text-shadow: 0 0 1px black;
@@ -362,10 +362,15 @@
             transform: translate(-50%, -50%);
             z-index: 3;
 
+            @include mixins.breakpoint-up("medium") {
+                padding: 2em 3em;
+            }
+
             @include mixins.breakpoint-down("small"){
                 // height: fit-content;
                 border-radius: 10px;
                 gap: 1rem;
+                padding: 2em;
                 flex-direction: column;
             }
             
