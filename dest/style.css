@@ -402,6 +402,12 @@ section {
   -webkit-animation: upright-load 1000ms ease-in forwards;
           animation: upright-load 1000ms ease-in forwards;
 }
+@media (max-width: 39.9375em) {
+  .upright-load {
+    -webkit-animation: upright-load-sm 1000ms ease-in-out forwards;
+            animation: upright-load-sm 1000ms ease-in-out forwards;
+  }
+}
 
 @-webkit-keyframes text-fade-in {
   10% {
@@ -437,9 +443,6 @@ section {
     padding-top: 15rem;
   }
   100% {
-    @media (max-width: 39.9375em) {
-      padding-top: -550rem;
-    }
     padding-top: 2rem;
   }
 }
@@ -448,10 +451,23 @@ section {
     padding-top: 15rem;
   }
   100% {
-    @media (max-width: 39.9375em) {
-      padding-top: -550rem;
-    }
     padding-top: 2rem;
+  }
+}
+@-webkit-keyframes upright-load-sm {
+  0% {
+    padding-top: 15rem;
+  }
+  100% {
+    padding-top: 5rem;
+  }
+}
+@keyframes upright-load-sm {
+  0% {
+    padding-top: 15rem;
+  }
+  100% {
+    padding-top: 5rem;
   }
 }
 @media (max-width: 554px) {
@@ -848,6 +864,7 @@ section {
 }
 .social h2 {
   color: white;
+  text-align: center;
 }
 .social__links {
   display: flex;
@@ -1179,6 +1196,12 @@ section {
 .institucional .socios-card__member-spec[title~=Willians] .socios-card__member-image {
   background-image: url(/src/assets/images/socios/Willians.jpeg);
   background-position: 100% 70%;
+}
+@media (max-width: 39.9375em) {
+  .institucional .socios-card__member-spec .socios-card__member-image {
+    width: 250px;
+    height: 220px;
+  }
 }
 .institucional .socios-card__member-spec .avatar {
   display: flex;
