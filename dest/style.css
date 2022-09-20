@@ -1180,6 +1180,7 @@ section {
   .institucional .socios-card__member-spec {
     border-radius: 10px;
     gap: 1rem;
+    flex-direction: column;
   }
 }
 .institucional .socios-card__member-spec[title~=Philipi] .socios-card__member-image {

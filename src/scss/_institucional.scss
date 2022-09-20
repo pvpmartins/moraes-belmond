@@ -366,6 +366,7 @@
             @include mixins.breakpoint-down("small"){
                 border-radius: 10px;
                 gap: 1rem;
+                flex-direction: column;
             }
             
             &[title~="Philipi"] .socios-card__member-image{
