@@ -42,7 +42,7 @@ const observer2 = new IntersectionObserver(entries => {
     })
 })
 
-const titleObserver = new IntersectionObserver(entries => {
+const textFadeInObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add("text-fade-in")
@@ -50,10 +50,10 @@ const titleObserver = new IntersectionObserver(entries => {
     })
 })
 
-const heroTextItemsObserver = new IntersectionObserver(entries => {
+const uprightLoadObserver = new IntersectionObserver(entries => {
     entries.forEach(entry=>{
         if (entry.isIntersecting) {
-            entry.target.classList.add("")
+            entry.target.classList.add("upright-load")
         }
     })
 })
@@ -66,14 +66,14 @@ cardsLeft.forEach((card)=>{
     observer2.observe(card)
 })
 
-titleObserver.observe(featuresTitle)
+textFadeInObserver.observe(featuresTitle)
 
 const heroTextItems = document.querySelectorAll<HTMLElement>(".hero__text__item")
+const heroText = document.querySelector(".hero__text") as HTMLElement
 
-
+uprightLoadObserver.observe(heroText)
 heroTextItems.forEach(item=>{
-    titleObserver.observe(item)
-    console.log(item);
+    textFadeInObserver.observe(item)
 })
 
 

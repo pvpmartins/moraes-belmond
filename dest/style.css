@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -121,6 +122,7 @@ ul {
   z-index: 3;
   top: 0;
   width: 100%;
+  border-bottom: 0.5px solid rgb(44, 44, 44);
 }
 .header img {
   height: 38px;
@@ -346,10 +348,16 @@ section {
   text-shadow: 0 0 3px black;
   padding: 2rem 3rem;
   padding-bottom: 4rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: -99px;
+}
+@media (max-width: 39.9375em) {
+  .hero__text {
+    padding-top: 7rem;
+  }
 }
 .hero__text h1 {
   font-weight: 300;
@@ -390,6 +398,11 @@ section {
           animation: text-fade-in 1000ms ease-in forwards;
 }
 
+.upright-load {
+  -webkit-animation: upright-load 1000ms ease-in forwards;
+          animation: upright-load 1000ms ease-in forwards;
+}
+
 @-webkit-keyframes text-fade-in {
   10% {
     opacity: 0.15;
@@ -419,6 +432,28 @@ section {
     opacity: 1;
   }
 }
+@-webkit-keyframes upright-load {
+  0% {
+    padding-top: 15rem;
+  }
+  100% {
+    @media (max-width: 39.9375em) {
+      padding-top: -550rem;
+    }
+    padding-top: 2rem;
+  }
+}
+@keyframes upright-load {
+  0% {
+    padding-top: 15rem;
+  }
+  100% {
+    @media (max-width: 39.9375em) {
+      padding-top: -550rem;
+    }
+    padding-top: 2rem;
+  }
+}
 @media (max-width: 554px) {
   .hero__image {
     height: 280px;
@@ -432,9 +467,6 @@ section {
     transform: translateX(-50%);
     -webkit-animation: none;
             animation: none;
-  }
-  .hero__text {
-    padding: 1rem;
   }
 }
 @-webkit-keyframes logo-load {
@@ -456,7 +488,7 @@ section {
   }
 }
 .footer {
-  border-top: 0.5px solid rgb(66, 66, 66);
+  border-top: 0.5px solid rgb(44, 44, 44);
   padding: 2.5rem;
   background-color: rgb(0, 0, 0);
   text-align: center;
@@ -505,11 +537,24 @@ section {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 39.9375em) {
+  .footer__social {
+    padding-top: 0.7rem;
+  }
+}
 .footer__social a {
   display: inline-block;
 }
 .footer__social a:not(:last-child) {
   margin-right: 1rem;
+}
+.footer__social a .fa-brands {
+  font-size: 23px;
+}
+@media (max-width: 39.9375em) {
+  .footer__social a .fa-brands {
+    font-size: 30px;
+  }
 }
 @media (min-width: 64em) {
   .footer__social {
@@ -570,7 +615,11 @@ section {
   font-family: "Questrial", sans-serif;
 }
 .feature__description {
-  text-shadow: 1px 1px 5px black;
+  padding: 0.25rem 0rem;
+  line-height: 1.4;
+  display: inline;
+  background-color: rgba(255, 255, 255, 0.61);
+  color: rgb(0, 0, 0);
 }
 .feature__grid {
   display: flex;
@@ -578,25 +627,26 @@ section {
   gap: 5em;
 }
 .feature__grid .feature__item:nth-child(1) {
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.direitoreal.com.br%2Fuploads%2Fckeditor%2Fpictures%2F68%2Fdemissao-acordo-reforma-trabalhista.jpg&f=1&nofb=1);
+  background-image: url(/src/assets/images/direito-trabalhista-como-funciona-1536x864.jpg);
   background-position: center 20%;
 }
 .feature__grid .feature__item:nth-child(2) {
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.clladv.com.br%2Fwp-content%2Fuploads%2F2020%2F10%2Fdireito-civel.jpg&f=1&nofb=1);
+  background-image: url(/src/assets/images/PROCESSO-CIVIL.jpg);
   background-position: center 20%;
 }
 .feature__grid .feature__item:nth-child(3) {
-  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.baymaefernandes.adv.br%2Fwp-content%2Fuploads%2F2020%2F03%2FDIREITO-PREVIDENCI%25C3%2581RIO.jpg&f=1&nofb=1);
+  background-image: url(/src/assets/images/DIREITO-PREVIDENCIÁRIO-716225622.png);
   background-position: center 60%;
 }
 .feature__grid .feature__item:nth-child(4) {
-  background-image: url(https://vidamental.com.br/wp-content/uploads/2017/05/Direito-Civil-Vida-Mental.jpg);
+  background-image: url(/src/assets/images/card-especial-civel.jpg);
   background-position: center 20%;
 }
 @media (max-width: 39.9375em) {
   .feature__grid {
     align-items: center;
     left: 0;
+    overflow-x: hidden;
   }
   .feature__grid .feature__item {
     left: -60vw;
@@ -604,7 +654,7 @@ section {
   .feature__grid .feature__item h2 {
     text-align: center;
     top: -1em;
-    left: 90%;
+    left: 50%;
     transform: translateX(-50%);
   }
 }
@@ -790,6 +840,7 @@ section {
 }
 
 .social {
+  padding: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -893,6 +944,7 @@ section {
   align-items: center;
   justify-items: center;
   height: 0;
+  cursor: pointer;
   transition: height 300ms ease-in-out;
   grid-auto-flow: column;
   gap: 1rem;
@@ -927,9 +979,9 @@ section {
 .galeria-photos .photo img::-webkit-scrollbar {
   -webkit-appearance: none;
 }
-.galeria-photos img {
-  height: 200px;
+.galeria-photos img, .galeria-photos video {
   box-shadow: 0px 0px 10px black;
+  height: 200px;
 }
 
 .open-photos {
@@ -983,9 +1035,18 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  height: 80%;
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media (min-width: 40em) {
+  .photo-zoomed {
+    height: 80%;
+  }
+}
+@media (max-width: 39.9375em) {
+  .photo-zoomed {
+    width: 99%;
+  }
 }
 
 .institucional {
@@ -1017,7 +1078,14 @@ section {
 }
 .institucional .socios-card__members {
   display: flex;
+  gap: 2em;
   justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 40em) {
+  .institucional .socios-card__members {
+    padding: 0em 3em;
+  }
 }
 @media (max-width: 39.9375em) {
   .institucional .socios-card__members {
@@ -1036,16 +1104,42 @@ section {
   font-weight: 500;
   white-space: nowrap;
   z-index: 1;
+  width: 25%;
+  height: 90%;
   transition: transform 100ms ease-in;
 }
 .institucional .socios-card__member img {
+  cursor: pointer;
   box-shadow: 0px 0px 10px black;
   width: 90%;
 }
+.institucional .socios-card__member-image {
+  width: 20vw;
+  height: 23vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 @media (max-width: 39.9375em) {
-  .institucional .socios-card__member img {
-    width: 70vw;
+  .institucional .socios-card__member-image {
+    width: 250px;
+    height: 220px;
   }
+}
+.institucional .socios-card__member[title~=Philipi] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/phillipe.jpeg);
+  background-position: 100% 85%;
+}
+.institucional .socios-card__member[title~=Gabriel] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/gabriel.jpeg);
+  background-position: 0% 15%;
+}
+.institucional .socios-card__member[title~=Claudine] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/Claudine.JPG);
+  background-position: center 35%;
+}
+.institucional .socios-card__member[title~=Willians] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/Willians.jpeg);
+  background-position: 100% 70%;
 }
 .institucional .socios-card__member:hover {
   transform: scale(1.1);
@@ -1059,13 +1153,32 @@ section {
   background-color: rgb(100, 100, 100);
   color: rgb(255, 255, 255);
   width: 70vw;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
   top: -30vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
+}
+@media (max-width: 39.9375em) {
+  .institucional .socios-card__member-spec {
+    border-radius: 10px;
+    gap: 1rem;
+  }
+}
+.institucional .socios-card__member-spec[title~=Philipi] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/phillipe.jpeg);
+  background-position: 100% 85%;
+}
+.institucional .socios-card__member-spec[title~=Gabriel] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/gabriel.jpeg);
+  background-position: 0% 15%;
+}
+.institucional .socios-card__member-spec[title~=Claudine] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/Claudine.JPG);
+  background-position: center 35%;
+}
+.institucional .socios-card__member-spec[title~=Willians] .socios-card__member-image {
+  background-image: url(/src/assets/images/socios/Willians.jpeg);
+  background-position: 100% 70%;
 }
 .institucional .socios-card__member-spec .avatar {
   display: flex;
@@ -1073,19 +1186,20 @@ section {
   align-items: center;
   gap: 1rem;
   height: 100%;
+  width: 40%;
 }
-.institucional .socios-card__member-spec .avatar img {
-  height: 300px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+@media (min-width: 40em) {
+  .institucional .socios-card__member-spec .avatar img {
+    width: 100%;
+  }
 }
 @media (max-width: 39.9375em) {
   .institucional .socios-card__member-spec .avatar {
     width: 15em;
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
+    border-radius: 10px;
+  }
+  .institucional .socios-card__member-spec .avatar img {
+    width: 90%;
   }
 }
 @media (max-width: 39.9375em) {
@@ -1165,6 +1279,7 @@ section {
   transform: scale(1.08);
 }
 .institucional .aux-card__member img {
+  cursor: pointer;
   border-radius: 2px;
   box-shadow: 7px 7px 2px black;
   box-shadow: 0px 0px 20px black;
@@ -1249,15 +1364,28 @@ section {
     opacity: 1;
   }
 }
+.pg-contato-items {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 6rem;
+  padding-top: 5rem;
+  justify-content: center;
+}
+@media (max-width: 39.9375em) {
+  .pg-contato-items {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
 .location {
   background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
-  padding-bottom: 5em;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  gap: 2em;
 }
 .location #map {
   box-shadow: 0px 0px 10px 5px rgba(121, 121, 121, 0.377);
@@ -1266,7 +1394,7 @@ section {
   width: 70vw;
   background-color: black;
   border-radius: 10px;
-  height: 30em;
+  height: 35em;
 }
 .location #map .map-panel {
   display: flex;
@@ -1275,7 +1403,9 @@ section {
   justify-content: flex-start;
   top: 0%;
   height: 100%;
-  width: 30%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   gap: 0.5em;
 }
 .location #map .map-panel div {
@@ -1285,16 +1415,30 @@ section {
   border-radius: 5px;
   color: white;
   font-family: "Questrial", sans-serif;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
 }
 .location #map .map-panel div:hover {
   background-color: black;
   outline: 1px solid rgb(128, 128, 128);
 }
 .location #map iframe {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  width: 70%;
+  width: 100%;
   height: 100%;
+}
+@media (min-width: 40em) {
+  .location #map iframe {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+@media (max-width: 39.9375em) {
+  .location #map iframe {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 }
 @media (max-width: 39.9375em) {
   .location #map {
@@ -1314,19 +1458,27 @@ section {
 .contato {
   display: flex;
   justify-content: flex-start;
-  -webkit-padding-start: 3rem;
-          padding-inline-start: 3rem;
-  padding-top: 7rem;
+  padding-top: 5rem;
+}
+@media (max-width: 39.9375em) {
+  .contato {
+    padding-top: 0rem;
+  }
 }
 .contato li, .contato a {
   text-decoration: none;
   color: white;
 }
+.contato a:hover {
+  color: greenyellow;
+}
 .contato h3 {
   color: white;
 }
 .contato ul {
+  padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */

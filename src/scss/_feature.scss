@@ -14,7 +14,21 @@
         }
 
         &__description {
-            text-shadow: 1px 1px 5px black;
+            // text-shadow: 0px 0px 1px black;
+            padding: 0.25rem 0rem;
+            line-height: 1.40;
+            display: inline;
+            background-color: rgba(255, 255, 255, 0.61); 
+            color: rgb(0, 0, 0);
+            // box-decoration-break: clone;
+            // filter: url('#goo');
+            // border-radius: 5px;
+            
+            // &:focus{
+                // outline: 0;
+            // }
+            span{
+            }
         }
 
         &__grid {
@@ -25,24 +39,28 @@
                 gap: 5em;
                 // margin: 50px 0;
                 .feature__item:nth-child(1) {
-                    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.direitoreal.com.br%2Fuploads%2Fckeditor%2Fpictures%2F68%2Fdemissao-acordo-reforma-trabalhista.jpg&f=1&nofb=1);
+                    background-image: url(/src/assets/images/direito-trabalhista-como-funciona-1536x864.jpg);
                     background-position: center 20%;
+                    // span{
+                    //     top: 3rem;
+                    //     position: relative;
+                    // }
                     // animation: card-load-left 400ms ease-in-out forwards;
                 }
                 .feature__item:nth-child(2) {
-                    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.clladv.com.br%2Fwp-content%2Fuploads%2F2020%2F10%2Fdireito-civel.jpg&f=1&nofb=1);
+                    background-image: url(/src/assets/images/PROCESSO-CIVIL.jpg);
                     background-position: center 20%;
                     
                     // animation: card-load-right 400ms ease-in-out forwards;
                 }
                 .feature__item:nth-child(3) {
-                    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.baymaefernandes.adv.br%2Fwp-content%2Fuploads%2F2020%2F03%2FDIREITO-PREVIDENCI%25C3%2581RIO.jpg&f=1&nofb=1); 
+                    background-image: url(/src/assets/images/DIREITO-PREVIDENCIÁRIO-716225622.png); 
                     background-position: center 60%;
                     
                     // animation: card-load-left 400ms ease-in-out forwards;
                 }
                 .feature__item:nth-child(4) {
-                    background-image: url(https://vidamental.com.br/wp-content/uploads/2017/05/Direito-Civil-Vida-Mental.jpg);
+                    background-image: url(/src/assets/images/card-especial-civel.jpg);
                     background-position: center 20%;
                     
                     // animation: card-load-right 400ms ease-in-out forwards;
@@ -51,12 +69,13 @@
                 @include mixins.breakpoint-down(small) {
                     align-items: center;
                     left: 0;
+                    overflow-x: hidden;
                     .feature__item{
                         left: -60vw;
                         h2{
                             text-align: center;
                             top: -1em;
-                            left: 90%;
+                            left: 50%;
                             transform: translateX(-50%);
                         }
                     }
@@ -160,6 +179,8 @@
             left: 0%;
         }
     }
+
+    
 
     @keyframes title-fade-in {
         10%{

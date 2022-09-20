@@ -41,12 +41,14 @@ funcionarios.forEach(funcionario=>{
             memberSpec.style.display = "flex"
             memberSpec.classList.add("modal-load")
             overlay.style.display = "flex"
+            document.body.style.overflow = "hidden"
             console.log(memberSpec);
             const btnExit = document.querySelector(`.socios-card__member-spec[title="${member}"] .btn-exit`) as HTMLElement
             btnExit.addEventListener("click", (()=>{
                 memberSpec.style.display = "none"
                 memberSpec.classList.remove("modal-load")
                 overlay.style.display = "none"
+                document.body.style.overflow = "visible"
                 console.log("exit");
             }))
         }

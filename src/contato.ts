@@ -1,5 +1,18 @@
 import '/dest/style.css'
 
+const toggleBtn = document.querySelector(".toggle-button")
+const navLinks = document.querySelector(".navbar-links")
+
+toggleBtn?.addEventListener("click", ()=>{
+    navLinks?.classList.toggle('active')
+    toggleBtn?.classList.toggle('open')
+    // if(!navLinks?.classList.contains("active")) {
+    //     navLinks?.classList.add("inactive")
+    // } else {
+    //     navLinks?.classList.remove("inactive")
+    // }
+})
+
 const googleMap = document.querySelector("#map iframe") as HTMLIFrameElement
 const mapLocations = document.querySelectorAll<HTMLElement>(".map-panel div")
 

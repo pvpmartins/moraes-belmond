@@ -1,24 +1,37 @@
 @use 'variables' as *;
 @use 'mixins';
 
+.pg-contato-items {
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 6rem;
+    padding-top: 5rem;
+    justify-content: center;
+    @include mixins.breakpoint-down("small") {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
 .location{
     background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
-    padding-bottom: 5em;
+    // padding-bottom: em;
     justify-content: center;
     align-items: center;
-    gap: 3em;
+    gap: 2em;
     #map{
         box-shadow: 0px 0px 10px 5px rgba(121, 121, 121, 0.377);
         display: flex;
         align-items: center;
+        // flex-direction: column;
         width: 70vw;
         background-color: black;
         // padding: 3px;
         border-radius: 10px;
-        height: 30em;
+        height: 35em;
         .map-panel{
             display: flex;
             padding: 5px;
@@ -26,7 +39,7 @@
             justify-content: flex-start;
             top: 0%;
             height: 100%;
-            width: 30%;
+            width: max-content;
             gap: .5em;
             div{
                 font-size: 1em;
@@ -35,7 +48,8 @@
                 border-radius: 5px;
                 color: white;
                 font-family: $SansSerif;
-                
+                height: max-content;
+                width: 100%;
                 &:hover{
                     background-color: black;
                     outline: 1px solid rgb(128, 128, 128);
@@ -43,10 +57,16 @@
             }
         }
         iframe{
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            width: 70%; 
+            width: 100%; 
             height: 100%;
+            @include mixins.breakpoint-up(medium) {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            @include mixins.breakpoint-down(small) {
+                border-top-left-radius:10px;
+                border-top-right-radius: 10px;
+            }
         }
         // border: 3px solid black;
         @include mixins.breakpoint-down(small) {
@@ -67,18 +87,26 @@
 .contato{
     display: flex;
     justify-content: flex-start;
-    padding-inline-start: 3rem;
-    padding-top: 7rem;
+    padding-top: 5rem;
+
+    @include mixins.breakpoint-down("small") {
+        padding-top: 0rem;
+    }
     li, a{
         text-decoration: none;
         color: white;
+    }
+    a:hover{
+        color: greenyellow;
     }
     h3{
         color: white
     }
     ul{
+        padding-top: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        gap: 1rem;
     }
 }
