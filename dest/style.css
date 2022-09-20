@@ -1176,9 +1176,6 @@ section {
 }
 @media (max-width: 39.9375em) {
   .institucional .socios-card__member-spec {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
     border-radius: 10px;
     gap: 1rem;
     flex-direction: column;
