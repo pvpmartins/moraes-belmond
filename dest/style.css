@@ -1187,12 +1187,6 @@ section {
   background-image: url(/src/assets/images/socios/phillipe.jpeg);
   background-position: 100% 85%;
 }
-@media (max-width: 39.9375em) {
-  .institucional .socios-card__member-spec[title~=Philipi] .socios-card__member-image .socios-card__member-image {
-    width: 250px;
-    height: 220px;
-  }
-}
 .institucional .socios-card__member-spec[title~=Gabriel] .socios-card__member-image {
   background-image: url(/src/assets/images/socios/gabriel.jpeg);
   background-position: 0% 15%;
@@ -1225,6 +1219,12 @@ section {
   }
   .institucional .socios-card__member-spec .avatar img {
     width: 90%;
+  }
+}
+@media (max-width: 39.9375em) {
+  .institucional .socios-card__member-spec .avatar > .socios-card__member-image {
+    width: 250px;
+    height: 220px;
   }
 }
 @media (max-width: 39.9375em) {
