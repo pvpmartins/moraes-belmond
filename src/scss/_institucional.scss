@@ -510,6 +510,7 @@
     @include mixins.breakpoint-down(small) {
         width: 250px;
         height: 220px;
+        display: none;
     }
 }
 

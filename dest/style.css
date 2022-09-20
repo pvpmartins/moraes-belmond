@@ -1317,6 +1317,7 @@ section {
   .avatar > .socios-card__member-image {
     width: 250px;
     height: 220px;
+    display: none;
   }
 }
 
