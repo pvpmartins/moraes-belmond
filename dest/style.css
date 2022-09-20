@@ -664,9 +664,6 @@ section {
     left: 0;
     overflow-x: hidden;
   }
-  .feature__grid .feature__item {
-    left: -60vw;
-  }
   .feature__grid .feature__item h2 {
     text-align: center;
     top: -1em;
