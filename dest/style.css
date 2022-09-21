@@ -1122,6 +1122,11 @@ section {
   height: 90%;
   transition: transform 100ms ease-in;
 }
+@media (max-width: 39.9375em) {
+  .institucional .socios-card__member {
+    flex-direction: column-reverse;
+  }
+}
 .institucional .socios-card__member img {
   cursor: pointer;
   box-shadow: 0px 0px 10px black;

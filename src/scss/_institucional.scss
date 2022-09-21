@@ -305,6 +305,10 @@
             height: 90%;
         
             transition: transform 100ms ease-in;
+            @include mixins.breakpoint-down(small) {
+                flex-direction: column-reverse;
+            }
+            
             img{
                 cursor: pointer; 
                 box-shadow: 0px 0px 10px black;
