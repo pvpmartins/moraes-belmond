@@ -623,7 +623,7 @@ section {
 .feature {
   background-color: rgb(0, 0, 0);
 }
-.feature > h2 {
+.feature > p {
   opacity: 0;
   color: white;
   padding-bottom: 6rem;
