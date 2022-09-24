@@ -13,7 +13,7 @@ toggleBtn?.addEventListener("click", ()=>{
     // }
 })
 
-const featuresTitle = document.querySelector(".feature > h2") as HTMLElement
+const featuresTitle = document.querySelector(".feature > p") as HTMLElement
 
 const cards = document.querySelectorAll<HTMLElement>(".feature__item")
 
