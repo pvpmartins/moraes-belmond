@@ -58,25 +58,25 @@ funcionarios.forEach(funcionario=>{
 
 const openPhotos = document.querySelector(".open-photos") as HTMLElement
 const filmIcon = document.querySelector(".open-photos i") as HTMLElement
-const photoSequence = document.querySelector(".photos") as HTMLElement
+const photosArr = document.querySelector(".photos") as HTMLElement
 const rightArrow = document.querySelector(".fa-arrow-right") as HTMLElement
 const leftArrow = document.querySelector(".fa-arrow-left") as HTMLElement
 
 openPhotos.addEventListener("click", (()=>{
     rightArrow.style.display = "inline-block"
     leftArrow.style.display = "inline-block"
-    photoSequence.style.padding= "1rem"
-    photoSequence.style.height= "230px"
-    filmIcon.style.display = "none"
+    photosArr.style.padding= "1rem"
+    photosArr.style.height= "230px"
+    // filmIcon.style.display = "none"
 }))
 
 
 rightArrow.addEventListener("click", (()=>{
-    photoSequence.scrollBy({left: 270, behavior: "smooth"})
+    photosArr.scrollBy({left: 270, behavior: "smooth"})
 }))
 
 leftArrow.addEventListener("click", (()=>{
-    photoSequence.scrollBy({left: -270, behavior: "smooth"})
+    photosArr.scrollBy({left: -270, behavior: "smooth"})
 }))
 
 const photos = document.querySelectorAll<HTMLDivElement>(".photo")

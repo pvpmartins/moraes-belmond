@@ -129,6 +129,64 @@ ul {
   margin: 0.3em 0 0.3em 0.7em;
 }
 
+.player-control {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.player-control__play {
+  font-size: 25px;
+  color: white;
+  border-radius: 100em;
+  width: 35px;
+  border-color: black;
+  padding: 4px 0px 4px 9px;
+  transition: outline 200ms ease-in-out, color 200ms ease-in-out;
+}
+.player-control__play:hover {
+  color: rgb(224, 191, 40);
+  outline: none;
+}
+.player-control .fa-volume-high, .player-control .fa-volume-low, .player-control .fa-volume-xmark {
+  display: none;
+}
+.player-control[data-volume-level=high] .fa-volume-high {
+  display: block;
+}
+.player-control[data-volume-level=low] .fa-volume-low {
+  display: block;
+}
+.player-control[data-volume-level=muted] .fa-volume-xmark {
+  display: block;
+}
+.player-control .volume-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.player-control .volume-container .mute-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  transition: scale 100ms ease-in-out;
+}
+.player-control .volume-container .volume-slider {
+  width: 0;
+  transition: width 200ms ease-in-out;
+  transform: scaleX(0);
+}
+.player-control .volume-container:hover .volume-slider {
+  width: 100px;
+  transform: scaleX(1);
+}
+.player-control .volume-container:hover .mute-btn {
+  scale: 1.2;
+}
+
 .navbar {
   -webkit-animation: header-load 800ms ease-out forwards;
           animation: header-load 800ms ease-out forwards;
@@ -886,6 +944,11 @@ section {
   background-color: rgb(0, 0, 0);
 }
 
+.video-apresentacao {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .btn-open__youtube-section {
   padding-left: 3rem;
   position: relative;
@@ -998,12 +1061,27 @@ section {
   height: 200px;
 }
 
+.open-videos {
+  color: white;
+}
+
 .open-photos {
   padding: 6rem 0 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.open-photos .open-photos__btn {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  transition: transform 120ms ease-out;
+  transition: text-shadow 100ms ease-in-out;
+}
+.open-photos .open-photos__btn:hover {
+  text-shadow: 0px 0px 10px white;
 }
 .open-photos__container {
   display: flex;
@@ -1022,13 +1100,6 @@ section {
   cursor: pointer;
   transform: scale(1.15);
   text-shadow: 0px 0px 10px white;
-}
-.open-photos__container .open-photos__btn {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  color: white;
-  transition: transform 120ms ease-out;
 }
 .open-photos__container .fa-film {
   position: relative;

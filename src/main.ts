@@ -24,7 +24,61 @@ cardsRight.push(cards[0], cards[2])
 cardsLeft.push(cards[1], cards[3])
 
 
+// Player Control
+const player = document.getElementById("player") as HTMLAudioElement
+const playerControl = document.querySelector(".player-control") as HTMLElement
+const playPauseBtn = document.querySelector(".player-control__play") as HTMLElement
+const muteBtn = document.querySelector(".mute-btn")
+const volumeSlider = document.querySelector(".volume-slider") as HTMLInputElement
 
+player?.play()
+
+playPauseBtn.addEventListener('click', ()=>{
+    if(playPauseBtn.classList.contains("fa-play")) {
+        player?.play()
+        playPauseBtn.classList.remove("fa-play")
+        playPauseBtn.classList.add("fa-pause")
+    }else if(playPauseBtn.classList.contains("fa-pause")) {
+        player?.pause()
+        playPauseBtn.classList.remove("fa-pause")
+        playPauseBtn.classList.add("fa-play")
+    }
+})
+
+
+muteBtn?.addEventListener("click", toggleMute)
+
+function toggleMute() {
+    player.muted = !player.muted
+    if(player.muted) {
+        playerControl.dataset.volumeLevel = "muted"
+    }else {
+        playerControl.dataset.volumeLevel = "high"
+    }
+}
+
+// volumeSlider?.addEventListener("input", e => {
+//     const target = e.target as HTMLInputElement
+//     const value = +target.value / 100
+//     player.volume = value
+//     player.muted = +target.value === 0
+// })
+
+// player.addEventListener("volumechange", ()=>{
+//     volumeSlider.value = player.volume.toString()
+//     let volumeLevel 
+//     if (player.muted || player.volume === 0){
+//         volumeSlider.value = '0'
+//         volumeLevel = "muted"
+//     } else if(player.volume >= .5) {
+//         volumeLevel = "high"
+//     } else {
+//         volumeLevel = "low"
+//     }
+//     playerControl.dataset.volumeLevel = volumeLevel
+// })
+
+// Cards fade-in
 const observer = new IntersectionObserver(entries => {
     entries.forEach((entry)=>{
         if (entry.isIntersecting){
