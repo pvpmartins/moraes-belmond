@@ -147,7 +147,9 @@ ul {
   color: rgb(224, 191, 40);
   outline: none;
 }
-.player-control .fa-volume-high, .player-control .fa-volume-low, .player-control .fa-volume-xmark {
+.player-control .fa-volume-high,
+.player-control .fa-volume-low,
+.player-control .fa-volume-xmark {
   display: none;
 }
 .player-control[data-volume-level=high] .fa-volume-high {
@@ -185,6 +187,14 @@ ul {
 }
 .player-control .volume-container:hover .mute-btn {
   scale: 1.2;
+}
+@media (max-width: 39.9375em) {
+  .player-control {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .navbar {
